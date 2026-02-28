@@ -1,9 +1,13 @@
 "use client";
 
-import { Droplets, Activity, Clock } from "lucide-react";
+import { Droplets, Activity, Clock, Home, BarChart3, BookOpen, Settings } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export function Header() {
+    const pathname = usePathname();
     const [isOnline, setIsOnline] = useState(true);
     const [lastUpdated, setLastUpdated] = useState("");
 
@@ -36,6 +40,33 @@ export function Header() {
                         </span>
                     </div>
                 </div>
+
+                {/* Desktop Navigation */}
+                <nav className="hidden lg:flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-2xl border border-slate-200/50 dark:border-slate-700/50">
+                    {[
+                        { name: "Beranda", href: "/", icon: Home },
+                        { name: "Statistik", href: "/statistics", icon: BarChart3 },
+                        { name: "Panduan", href: "/guide", icon: BookOpen },
+                        { name: "Admin", href: "/admin", icon: Settings },
+                    ].map((item) => {
+                        const isActive = pathname === item.href;
+                        return (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className={cn(
+                                    "flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all",
+                                    isActive
+                                        ? "bg-white dark:bg-slate-900 text-brand-primary shadow-sm"
+                                        : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200"
+                                )}
+                            >
+                                <item.icon className="w-4 h-4" />
+                                {item.name}
+                            </Link>
+                        );
+                    })}
+                </nav>
 
                 {/* Status Area */}
                 <div className="flex items-center gap-4">

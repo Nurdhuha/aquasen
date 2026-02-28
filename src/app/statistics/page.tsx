@@ -26,7 +26,7 @@ export default function StatisticsPage() {
 
                     <TrendChart />
 
-                    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+                    <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-24">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}

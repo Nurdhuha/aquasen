@@ -10,8 +10,22 @@
 }
 
 :root {
-  --background: #f8fafc; /* Very light slate */
-  --foreground: #0f172a; /* Dark slate */
+  --background: #f8fafc;
+  /* Very light slate */
+  --foreground: #0f172a;
+  /* Dark slate */
+}
+
+html {
+  font-size: 14px !important;
+  /* Smaller base for mobile */
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 16px !important;
+    /* Standard base for desktop */
+  }
 }
 
 @media (prefers-color-scheme: dark) {

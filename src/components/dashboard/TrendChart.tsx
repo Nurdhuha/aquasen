@@ -20,23 +20,28 @@ export function TrendChart() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-100 dark:border-slate-800 shadow-sm"
+            className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-10 border border-slate-100 dark:border-slate-800 shadow-sm"
         >
-            <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-brand-primary" />
-                    <h2 className="text-lg font-semibold tracking-tight text-slate-800 dark:text-slate-200">
-                        Grafik Tren 24 Jam
-                    </h2>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                    <div className="bg-brand-primary/10 p-2.5 rounded-xl">
+                        <Activity className="w-5 h-5 text-brand-primary" />
+                    </div>
+                    <div>
+                        <h2 className="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-200">
+                            Grafik Tren 24 Jam
+                        </h2>
+                        <p className="text-xs text-slate-500 font-medium">Pemantauan fluktuasi parameter</p>
+                    </div>
                 </div>
-                <select className="text-sm border-none bg-slate-50 dark:bg-slate-800 rounded-full px-4 py-1.5 outline-none focus:ring-2 focus:ring-brand-primary/20 text-slate-600 dark:text-slate-300 font-medium">
+                <select className="text-sm border-none bg-slate-50 dark:bg-slate-800 rounded-2xl px-6 py-2.5 outline-none focus:ring-2 focus:ring-brand-primary/20 text-slate-600 dark:text-slate-300 font-bold shadow-sm">
                     <option>TDS & pH</option>
                     <option>Kekeruhan</option>
                     <option>Debit Air</option>
                 </select>
             </div>
 
-            <div className="h-[250px] w-full mt-4">
+            <div className="h-[300px] lg:h-[400px] w-full mt-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={data} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
                         <defs>

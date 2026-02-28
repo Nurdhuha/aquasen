@@ -41,7 +41,7 @@ export default function GuidePage() {
                         </div>
                     </section>
 
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         {guides.map((guide, idx) => (
                             <motion.div
                                 key={idx}

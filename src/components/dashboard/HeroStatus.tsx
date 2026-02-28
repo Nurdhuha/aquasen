@@ -40,24 +40,24 @@ export function HeroStatus({ status = "aman" }: HeroStatusProps) {
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`relative w-full rounded-3xl overflow-hidden p-8 sm:p-10 ${activeConfig.color} ${activeConfig.glow} transition-all duration-500`}
+            className={`relative w-full rounded-[2.5rem] overflow-hidden p-8 sm:p-10 lg:p-14 ${activeConfig.color} ${activeConfig.glow} transition-all duration-500`}
         >
             {/* Decorative gradient overlay */}
-            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl mix-blend-overlay pointer-events-none" />
-            <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-64 h-64 bg-black opacity-10 rounded-full blur-3xl mix-blend-overlay pointer-events-none" />
+            <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white opacity-10 rounded-full blur-3xl mix-blend-overlay pointer-events-none" />
+            <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-black opacity-10 rounded-full blur-3xl mix-blend-overlay pointer-events-none" />
 
-            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                <div className="bg-white/20 p-4 rounded-2xl backdrop-blur-sm">
+            <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-8 lg:gap-12">
+                <div className="bg-white/20 p-5 lg:p-6 rounded-3xl backdrop-blur-sm">
                     {activeConfig.icon}
                 </div>
                 <div>
-                    <h2 className="text-sm font-semibold uppercase tracking-widest text-white/80 mb-1">
+                    <h2 className="text-xs lg:text-sm font-bold uppercase tracking-[0.2em] text-white/70 mb-2">
                         Status Keseluruhan
                     </h2>
-                    <div className="text-4xl sm:text-5xl font-black tracking-tight mb-2">
+                    <div className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tighter mb-4">
                         {activeConfig.title}
                     </div>
-                    <p className="text-white/90 font-medium text-lg max-w-lg">
+                    <p className="text-white/90 font-medium text-lg lg:text-xl max-w-2xl leading-relaxed">
                         {activeConfig.description}
                     </p>
                 </div>

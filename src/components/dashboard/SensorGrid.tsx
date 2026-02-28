@@ -24,7 +24,7 @@ export function SensorGrid() {
 
     return (
         <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 gap-8">
 
                 {/* Quality Sensors (RS485) */}
                 <div className="space-y-4">
@@ -34,7 +34,7 @@ export function SensorGrid() {
                             Kualitas Air
                         </h2>
                     </div>
-                    <div className="grid grid-cols-2 shadow-sm bg-white dark:bg-slate-900 rounded-3xl p-1 gap-1 border border-slate-100 dark:border-slate-800">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 shadow-sm bg-white dark:bg-slate-900 rounded-3xl p-1 gap-1 border border-slate-100 dark:border-slate-800">
                         <MetricCard
                             title="TDS"
                             value={data.tds.value}
@@ -86,7 +86,7 @@ export function SensorGrid() {
                             Ketersediaan & Distribusi
                         </h2>
                     </div>
-                    <div className="grid grid-cols-2 shadow-sm bg-white dark:bg-slate-900 rounded-3xl p-1 gap-1 border border-slate-100 dark:border-slate-800">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 shadow-sm bg-white dark:bg-slate-900 rounded-3xl p-1 gap-1 border border-slate-100 dark:border-slate-800">
                         <MetricCard
                             title="Level Air"
                             value={data.tank.value}
